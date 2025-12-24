@@ -8,15 +8,16 @@ import HomePage from "@/pages/desktop/HomePage";
 import UploadPage from "@/pages/admin/UploadPage";
 
 const queryClient = new QueryClient();
-
-
+const basename = import.meta.env.BASE_URL === "/"
+  ? "/"
+  : import.meta.env.BASE_URL.replace(/\/$/, "");
 
 const App = () => (
   <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename={basename}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/admin/upload" element={<UploadPage />} />

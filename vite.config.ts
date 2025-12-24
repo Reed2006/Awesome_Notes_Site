@@ -4,6 +4,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/Awesome_Notes_Site/",
   plugins: [react()],
   server: {
     host: "0.0.0.0",
