@@ -156,11 +156,28 @@ export const categories: Category[] = [
         title: 'Corporate Finance',
         titleZh: '公司金融',
         subtitle: 'Financial decisions within corporations',
-        description: '公司金融研究企业如何进行投资决策、融资决策和股利政策。课程包括资本预算、资本结构理论、股利政策、企业并购、风险管理等内容。通过案例分析掌握企业财务管理的核心技能。',
+        description: `公司金融，下面特指复旦大学经济学院的公司金融（H）课程，逻辑过于庞大（或者说混乱），事例过于丰富（或者说混乱），作业过于庞杂（或者说混乱）。因此，在第一次听课常常出现（或者说必然出现）听不懂授课老师在说什么的状况。当然，笔者一直秉持学习少于三遍的都属于娱乐的观点，所以给出一下论断：学好很难，学会不难。
+
+总而言之，这门课是一门从微观上对公司的业务全过程跟踪的实务课程，包括基本价值比较方法（这涉及到宏观经济学的跨期比较思想和资产定价问题）、融资方法、估值与财务决策方法（这极大涉及到会计学的相关知识）、营运资本管理以及期权专题。笔者在这里给出自己期末整理的笔记以及 Robert Shiller 在“financial market”这门课的课程笔记，如果你不幸要上公司金融，祝你好运。`,
         resources: [
-          { id: 'cf-1', title: 'Ross 公司理财核心公式', type: 'PDF', description: '计算公式速查手册' },
-          { id: 'cf-2', title: 'DCF估值模型模板', type: 'CODE', description: 'Excel模板与案例' },
-          { id: 'cf-3', title: '期末案例分析报告', type: 'PDF', description: '企业估值实战案例' },
+          {
+            id: 'cf-1',
+            title: "Reed's Notes",
+            type: 'PDF',
+            description: 'Reed 的公司金融课堂整理笔记 PDF',
+            downloadUrl: 'https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Corporate%20Finance/What%20you%20should%20know%20in%20Corporate%20Finance.pdf',
+            downloadFilename: 'What you should know in Corporate Finance.pdf',
+            mimeType: 'application/pdf',
+          },
+          {
+            id: 'cf-2',
+            title: "Shiller's Notes",
+            type: 'PDF',
+            description: 'Robert Shiller “Financial Market” 课程笔记',
+            downloadUrl: 'https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Corporate%20Finance/What%20you%20should%20know%20in%20Corporate%20Finance.pdf',
+            downloadFilename: 'What you should know in Corporate Finance.pdf',
+            mimeType: 'application/pdf',
+          },
         ]
       },
       {
