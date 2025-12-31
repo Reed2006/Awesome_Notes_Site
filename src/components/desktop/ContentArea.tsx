@@ -8,6 +8,8 @@ import { FileInfoCard } from '@/components/FileInfoCard';
 import { Progress } from '@/components/ui/progress';
 import { toast } from 'sonner';
 import { MusicPlayer } from '@/components/desktop/MusicPlayer';
+import ReactMarkdown, { Components } from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 interface ContentAreaProps {
   course: Course | null;
@@ -111,6 +113,89 @@ function ResourceCard({ resource, index }: ResourceCardProps) {
         </div>
       </div>
     </motion.div>
+  );
+}
+
+const markdownComponents: Components = {
+  h1: ({ children }) => (
+    <h1 className="font-serif text-4xl md:text-5xl font-light italic text-foreground mt-12 mb-6">
+      {children}
+    </h1>
+  ),
+  h2: ({ children }) => (
+    <h2 className="font-serif text-3xl font-light text-foreground mt-10 mb-4">
+      {children}
+    </h2>
+  ),
+  h3: ({ children }) => (
+    <h3 className="font-serif text-2xl text-foreground mt-8 mb-3">
+      {children}
+    </h3>
+  ),
+  p: ({ children }) => (
+    <p className="text-base leading-relaxed text-muted-foreground mb-4">
+      {children}
+    </p>
+  ),
+  ul: ({ children }) => (
+    <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">{children}</ul>
+  ),
+  ol: ({ children }) => (
+    <ol className="list-decimal pl-6 space-y-2 text-muted-foreground mb-6">{children}</ol>
+  ),
+  li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+  blockquote: ({ children }) => (
+    <blockquote className="border-l-4 border-primary/50 pl-4 italic text-muted-foreground mb-6">
+      {children}
+    </blockquote>
+  ),
+  strong: ({ children }) => <strong className="font-semibold text-foreground">{children}</strong>,
+  em: ({ children }) => <em className="italic text-foreground/90">{children}</em>,
+  a: ({ href, children }) => (
+    <a href={href} className="text-primary underline decoration-dotted underline-offset-4" target="_blank" rel="noreferrer">
+      {children}
+    </a>
+  ),
+  table: ({ children }) => (
+    <div className="overflow-x-auto mb-6">
+      <table className="w-full text-left border border-border">{children}</table>
+    </div>
+  ),
+  thead: ({ children }) => <thead className="bg-muted/50">{children}</thead>,
+  tbody: ({ children }) => <tbody>{children}</tbody>,
+  tr: ({ children }) => <tr className="border-b border-border">{children}</tr>,
+  th: ({ children }) => <th className="px-4 py-2 font-mono text-xs uppercase tracking-wide text-muted-foreground">{children}</th>,
+  td: ({ children }) => <td className="px-4 py-3 text-sm text-muted-foreground">{children}</td>,
+  code: ({ inline, children }) =>
+    inline ? (
+      <code className="px-1.5 py-0.5 rounded bg-muted text-sm font-mono text-foreground/90">{children}</code>
+    ) : (
+      <code className="block p-4 rounded bg-muted text-sm font-mono text-foreground/90 whitespace-pre-wrap mb-6">
+        {children}
+      </code>
+    ),
+};
+
+function MarkdownArticle({ markdown }: { markdown: string }) {
+  return (
+    <div className="px-8 lg:px-16 py-12 border-b border-border">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+        className="max-w-4xl mx-auto"
+      >
+        <div className="flex items-center gap-2 mb-6">
+          <ArrowRight className="w-4 h-4 text-muted-foreground" />
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
+            PAPER · MARKDOWN
+          </p>
+        </div>
+        <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+          {markdown}
+        </ReactMarkdown>
+      </motion.div>
+    </div>
   );
 }
 
@@ -352,27 +437,33 @@ export function ContentArea({ course, onSelectCourse }: ContentAreaProps) {
           </p>
         </motion.div>
       </div>
+
+      {course.contentMarkdown && (
+        <MarkdownArticle markdown={course.contentMarkdown} />
+      )}
       
       {/* Resources Section */}
-      <div className="px-8 lg:px-16 py-12">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="mb-8"
-        >
-          <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-2">
-            RESOURCES
-          </p>
-          <h2 className="font-serif text-2xl">推荐资料</h2>
-        </motion.div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {course.resources.map((resource, index) => (
-            <ResourceCard key={resource.id} resource={resource} index={index} />
-          ))}
+      {course.resources.length > 0 && (
+        <div className="px-8 lg:px-16 py-12">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="mb-8"
+          >
+            <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-2">
+              RESOURCES
+            </p>
+            <h2 className="font-serif text-2xl">推荐资料</h2>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {course.resources.map((resource, index) => (
+              <ResourceCard key={resource.id} resource={resource} index={index} />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </motion.div>
   );
 }
