@@ -119,6 +119,17 @@ function ResourceCard({ resource, index }: ResourceCardProps) {
   );
 }
 
+const resolveMarkdownAsset = (src?: string) => {
+  if (!src) return undefined;
+  if (/^https?:\/\//.test(src) || src.startsWith('data:')) {
+    return src;
+  }
+  const base = import.meta.env.BASE_URL ?? '/';
+  const normalizedBase = base.endsWith('/') ? base : `${base}/`;
+  const normalizedSrc = src.startsWith('/') ? src.slice(1) : src;
+  return `${normalizedBase}${normalizedSrc}`;
+};
+
 const markdownComponents: Components = {
   h1: ({ children }) => (
     <h1 className="font-serif text-4xl md:text-5xl font-light italic text-foreground mt-12 mb-6">
@@ -177,6 +188,16 @@ const markdownComponents: Components = {
         {children}
       </code>
     ),
+  img: ({ src, alt }) => {
+    const resolved = resolveMarkdownAsset(src);
+    if (!resolved) return null;
+    return (
+      <div className="my-6">
+        <img src={resolved} alt={alt} className="w-full rounded border border-border" />
+        {alt && <p className="text-sm text-muted-foreground mt-2 text-center italic">{alt}</p>}
+      </div>
+    );
+  },
 };
 
 function MarkdownArticle({ markdown }: { markdown: string }) {
