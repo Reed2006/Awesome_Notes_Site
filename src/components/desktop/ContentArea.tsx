@@ -10,6 +10,9 @@ import { toast } from 'sonner';
 import { MusicPlayer } from '@/components/desktop/MusicPlayer';
 import ReactMarkdown, { Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
 
 interface ContentAreaProps {
   course: Course | null;
@@ -191,7 +194,11 @@ function MarkdownArticle({ markdown }: { markdown: string }) {
             PAPER · MARKDOWN
           </p>
         </div>
-        <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm, remarkMath]}
+          rehypePlugins={[rehypeKatex]}
+          components={markdownComponents}
+        >
           {markdown}
         </ReactMarkdown>
       </motion.div>

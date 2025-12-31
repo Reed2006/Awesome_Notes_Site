@@ -1,11 +1,7 @@
-<div class="center">
+# 大股灾里的叙事——来自中国2015年股灾的证据
 
-大股灾里的叙事——来自中国2015年股灾的证据  
-何跃成  
-复旦大学经济学院  
-日期：
+何跃成 · 复旦大学经济学院
 
-</div>
 
 # 引言
 
@@ -56,11 +52,11 @@ et al. (2023)
 
 **公共信号
 (*y*<sub>*t*</sub>)**：代表主流媒体预期，为新闻情感值与确信度的加权聚合。
-$$y\_t = \\frac{\\sum\_{j=1}^{N\_t} (S\_{j,t}^{news} \\times C\_{j,t}^{news})}{\\sum\_{j=1}^{N\_t} C\_{j,t}^{news}}$$
+$$y_t = \frac{\sum_{j=1}^{N_t} (S_{j,t}^{news} \times C_{j,t}^{news})}{\sum_{j=1}^{N_t} C_{j,t}^{news}}$$
 
 **私人信号
 (*x*<sub>*i*, *t*</sub>)**：代表散户微观信念，为股民发言情感值与确信度的加权聚合。
-$$x\_{i,t} = \\frac{\\sum\_{k=1}^{M\_{i,t}} (S\_{k,t}^{retail} \\times C\_{k,t}^{retail})}{\\sum\_{k=1}^{M\_{i,t}} C\_{k,t}^{retail}}$$
+$$x_{i,t} = \frac{\sum_{k=1}^{M_{i,t}} (S_{k,t}^{retail} \times C_{k,t}^{retail})}{\sum_{k=1}^{M_{i,t}} C_{k,t}^{retail}}$$
 
 **叙事背离度
 (*G**a**p*<sub>*i*, *t*</sub>)**：核心变量，衡量官方叙事与民间感知的温差。
@@ -72,7 +68,7 @@ $$x\_{i,t} = \\frac{\\sum\_{k=1}^{M\_{i,t}} (S\_{k,t}^{retail} \\times C\_{k,t}^
 
 **投资者关注度
 (*V**o**l**u**m**e*<sub>*i*, *t*</sub>)**：仅衡量讨论热度，代表市场噪声水平。
-$$Volume\_{i,t} = \\sum\_{k=1}^{M\_{i,t}} C\_{k,t}^{retail}$$
+$$Volume_{i,t} = \sum_{k=1}^{M_{i,t}} C_{k,t}^{retail}$$
 
 为了检验叙事因子是否包含超越量价信息的预测力，我们构建了一个基于卷积神经网络（CNN）的预测框架。不同于传统单通道灰度K线图分析，我们提出了一种多通道RGB视觉编码策略，将三个变量映射到三个通道并叠加。：
 
@@ -82,30 +78,30 @@ $$Volume\_{i,t} = \\sum\_{k=1}^{M\_{i,t}} C\_{k,t}^{retail}$$
 
 -   **B通道（蓝）**：映射“投资者关注度”。蓝色代表市场嘈杂程度。
 
-<figure>
-<img src="/Users/air/Documents/narrative in crisis/叙事实验图像/图像集/实验组/600050_20150821.png" style="width:60.0%" alt="RGB叙事K线图示例（背景颜色映射叙事因子）" /><figcaption aria-hidden="true">RGB叙事K线图示例（背景颜色映射叙事因子）</figcaption>
-</figure>
+![RGB叙事K线图示例（背景颜色映射叙事因子）](/narrative-images/rgb-narrative.png)
+
+_图 1. RGB叙事K线图示例（背景颜色映射叙事因子）_
 
 ## 模型表现与策略回测
 
 我们分别训练了仅含量价信息的“控制组模型”（灰度图）与叠加叙事色彩的“实验组模型”（RGB图）。样本外测试结果显示，实验组模型的准确率提升至66.7%（控制组为53.6%），证明叙事背离提供了额外的预测力。
 
-<figure>
-<img src="/Users/air/Documents/narrative in crisis/叙事实验图像/训练输出/控制组模型/training_curve.png" alt="实验组模型收敛曲线" /><figcaption aria-hidden="true">实验组模型收敛曲线</figcaption>
-</figure>
+![控制组模型收敛曲线](/narrative-images/training-curve-control.png)
 
-<figure>
-<img src="/Users/air/Documents/narrative in crisis/叙事实验图像/训练输出/实验组模型/training_curve.png" alt="实验组模型收敛曲线" /><figcaption aria-hidden="true">实验组模型收敛曲线</figcaption>
-</figure>
+_图 2. 控制组模型收敛曲线_
+
+![实验组模型收敛曲线](/narrative-images/training-curve-treatment.png)
+
+_图 3. 实验组模型收敛曲线_
 
 为验证模型的经济价值，我们构建了一个“择时防御策略”。每日以过去二十天图像为输入，预测未来二十天上涨概率
 (*P*<sub>*t*</sub>)：若 *P*<sub>*t*</sub> &gt; 0.6 则持仓，若
 *P*<sub>*t*</sub> ≤ 0.4
 则空仓。回测结果（图4）显示，在2015年股灾单边下行阶段，实验组策略净值曲线展现出极强抗跌性，显著跑赢“买入持有”及“控制组”策略。这意味着模型成功识别了“叙事背离”信号，并及时进行了防御性操作。
 
-<figure>
-<img src="/Users/air/Documents/narrative in crisis/叙事回测/601766_净值对比.png" style="width:80.0%" alt="择时策略净值回测对比（中国中车 601766）" /><figcaption aria-hidden="true">择时策略净值回测对比（中国中车 601766）</figcaption>
-</figure>
+![择时策略净值回测对比（中国中车 601766）](/narrative-images/backtest-601766.png)
+
+_图 4. 择时策略净值回测对比（中国中车 601766）_
 
 # 机制分析
 
@@ -113,9 +109,9 @@ $$Volume\_{i,t} = \\sum\_{k=1}^{M\_{i,t}} C\_{k,t}^{retail}$$
 
 Grad-CAM热力图揭示：模型的注意力焦点并未集中在K线形态上，而是高度重合于背景中的深红色区域。这说明模型准确识别了“叙事背离”状况，并将其作为看空的主要动因。
 
-<figure>
-<img src="/Users/air/Documents/narrative in crisis/叙事解释/GradCAM_600999_20150623_全市场.png" style="width:80.0%" alt="Grad-CAM可视化机制分析（招商证券 2015-06-23）" /><figcaption aria-hidden="true">Grad-CAM可视化机制分析（招商证券 2015-06-23）</figcaption>
-</figure>
+![Grad-CAM可视化机制分析（招商证券 2015-06-23）](/narrative-images/gradcam-600999.png)
+
+_图 5. Grad-CAM可视化机制分析（招商证券 2015-06-23）_
 
 最后，为了量化各叙事维度的相对重要性，我们进行了因子剥离检验（Ablation
 Study）。如表1所示，屏蔽红色通道（叙事背离）后，模型对股灾样本的风险识别能力下降最显著，看涨概率误判率上升了8.6个百分点；而屏蔽蓝色（关注度）和绿色（共识度）通道的影响相对较小。这一发现从量化层面支持了核心假设：公共信息与私人信息的结构性背离，是导致市场脆弱性上升的主导因素。
@@ -125,39 +121,12 @@ Study）。如表1所示，屏蔽红色通道（叙事背离）后，模型对�
 本研究初步证实了叙事背离在金融危机预警中的核心作用，未来研究可从以下方向拓展：第一，将叙事因子与更高频的日内微观结构数据结合，探索情绪在分钟级别的传染机制；第二，扩展至跨市场与跨资产类别（如债券、商品）的样本，检验叙事背离理论的普适性；第三，从公司金融角度，深入分析上市公司管理层在危机期间的语调管理（Tone
 Management）策略如何影响公共信号的形成，从而为监管层的预期管理与信息披露制度提供更具针对性的政策建议。
 
-# 附录：LLM使用说明
+## 参考文献
 
-本文在写作过程中合理使用了大语言模型（LLM）。具体使用情况如下：
-
-1.  **代码辅助**：使用LLM辅助编写了Python实证代码，包括PyTorch模型搭建、Grad-CAM可视化脚本及回测逻辑实现。LLM提供了高效的代码框架，但核心逻辑由作者设计。
-
-2.  **文本润色**：使用LLM对部分段落进行学术语言润色，使其更符合中文学术规范，但文章的核心观点、实证结果及结论均源自作者的独立研究。
-
-3.  **排版辅助**：使用LLM将草稿内容转换为标准的LaTeX格式。
-
-<div class="thebibliography">
-
-99
-
-Shiller, R. J. (2019). *Narrative economics: How stories go viral and
-drive major economic events*. Princeton University Press.
-
-Gentzkow, M., Kelly, B., & Taddy, M. (2019). Text as data. *Journal of
-Economic Literature*, 57(3), 535-574.
-
-Tetlock, P. C. (2007). Giving content to investor sentiment: The role of
-media in the stock market. *The Journal of Finance*, 62(3), 1139-1168.
-
-Bybee, L., Kelly, B., & Su, Y. (2023). Narrative asset pricing. *The
-Journal of Finance*, 78(6), 2945-2993.
-
-Kim, S., Goetzmann, W. N., & Shiller, R. J. (2023). Crash narratives.
-*NBER Working Paper*.
-
-Jiang, J., Kelly, B., & Xiu, D. (2023). (Re-)Imag(in)ing price trends.
-*The Journal of Finance*, 78(6), 3193-3249.
-
-Flynn, J. P., & Sastry, K. (2024). The macroeconomics of narratives.
-*NBER Working Paper*.
-
-</div>
+- Shiller, R. J. (2019). *Narrative Economics: How Stories Go Viral and Drive Major Economic Events*. Princeton University Press.
+- Gentzkow, M., Kelly, B., & Taddy, M. (2019). Text as data. *Journal of Economic Literature*, 57(3), 535-574.
+- Tetlock, P. C. (2007). Giving content to investor sentiment: The role of media in the stock market. *The Journal of Finance*, 62(3), 1139-1168.
+- Bybee, L., Kelly, B., & Su, Y. (2023). Narrative asset pricing. *The Journal of Finance*, 78(6), 2945-2993.
+- Kim, S., Goetzmann, W. N., & Shiller, R. J. (2023). Crash narratives. *NBER Working Paper*.
+- Jiang, J., Kelly, B., & Xiu, D. (2023). (Re-)Imag(in)ing price trends. *The Journal of Finance*, 78(6), 3193-3249.
+- Flynn, J. P., & Sastry, K. (2024). The macroeconomics of narratives. *NBER Working Paper*.
