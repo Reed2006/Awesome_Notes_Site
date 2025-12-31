@@ -15,8 +15,6 @@ export interface Resource {
   storagePath?: string;      // Supabase 存储路径（用于删除/更新）
 }
 
-import narrativeCrashMarkdown from '@/content/narrative-crash-report.md?raw';
-
 export interface Course {
   id: string;
   code: string;
