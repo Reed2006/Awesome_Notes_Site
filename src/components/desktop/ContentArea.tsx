@@ -13,6 +13,7 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
+import { Calendar } from '@/components/ui/calendar';
 
 interface ContentAreaProps {
   course: Course | null;
@@ -407,6 +408,9 @@ export function ContentArea({ course, onSelectCourse }: ContentAreaProps) {
     return <WelcomeContent onSelectCourse={onSelectCourse} />;
   }
 
+  const showWorkshopCalendar = course.id === 'macrofinance-narrative';
+  const january2026 = new Date(2026, 0, 1);
+
   return (
     <motion.div
       key={course.id}
@@ -460,9 +464,21 @@ export function ContentArea({ course, onSelectCourse }: ContentAreaProps) {
           transition={{ delay: 0.25 }}
           className="lg:col-span-9 px-8 lg:px-16 py-8"
         >
-          <p className="font-serif text-lg leading-relaxed text-foreground/90 max-w-2xl">
-            {course.description}
-          </p>
+          {showWorkshopCalendar ? (
+            <div className="flex justify-center">
+              <Calendar
+                month={january2026}
+                defaultMonth={january2026}
+                fromDate={january2026}
+                toDate={new Date(2026, 0, 31)}
+                captionLayout="label"
+              />
+            </div>
+          ) : (
+            <p className="font-serif text-lg leading-relaxed text-foreground/90 max-w-2xl">
+              {course.description}
+            </p>
+          )}
         </motion.div>
       </div>
 
