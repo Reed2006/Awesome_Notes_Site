@@ -22,9 +22,9 @@ interface ContentAreaProps {
 }
 
 const WORKSHOP_TIMELINE: Record<string, string> = {
-  '2026-01-09': 'Asset Pricing 第一次研读',
-  '2026-01-11': '集体汇报前两个章节 · 研读一篇论文',
-  '2026-01-13': '集体汇报后两个章节 · 分享论文',
+  '2026-01-09': '1.9 ｜ Asset Pricing 第一次研读',
+  '2026-01-11': '1.11 ｜ 集体汇报前两个章节 · 研读一篇论文',
+  '2026-01-13': '1.13 ｜ 集体汇报后两个章节 · 分享论文',
 };
 
 const formatWorkshopDateKey = (date: Date) => date.toISOString().split('T')[0];
@@ -36,17 +36,18 @@ function WorkshopDayButton(props: ComponentProps<typeof CalendarDayButton>) {
     <CalendarDayButton
       {...props}
       className={cn(
-        "items-start justify-start text-left gap-2 p-3 min-h-[140px] [&>span]:text-sm",
-        event && "bg-muted/30 hover:bg-muted/40",
+        "items-start justify-start text-left gap-3 p-4 min-h-[160px] w-full [&>span]:text-base",
+        event ? "bg-muted/40 hover:bg-muted/60" : "bg-background",
+        "rounded-xl border border-border/60 shadow-sm",
         props.className
       )}
     >
-      <div className="flex flex-col gap-2 w-full">
-        <span className="text-xl font-semibold">
+      <div className="flex flex-col gap-3 w-full">
+        <span className="text-2xl font-semibold tracking-tight">
           {props.day.date.getDate().toString().padStart(2, '0')}
         </span>
         {event && (
-          <span className="text-xs leading-snug text-muted-foreground">
+          <span className="text-sm leading-snug text-muted-foreground whitespace-pre-line break-words">
             {event}
           </span>
         )}
@@ -502,11 +503,8 @@ export function ContentArea({ course, onSelectCourse }: ContentAreaProps) {
           {showWorkshopCalendar ? (
             <div className="flex justify-center">
               <Calendar
-                className="w-full max-w-3xl [--cell-size:5.5rem]"
-                month={january2026}
+                className="w-full max-w-4xl [--cell-size:6rem]"
                 defaultMonth={january2026}
-                fromDate={january2026}
-                toDate={new Date(2026, 0, 31)}
                 captionLayout="label"
                 components={{ DayButton: WorkshopDayButton }}
               />
