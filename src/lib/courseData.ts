@@ -211,11 +211,11 @@ export const categories: Category[] = [
           },
           {
             id: 'gt-3',
-            title: 'Signal Game Notes',
+            title: 'Game Theory Notes by Reed & maart1nham6ur9er',
             type: 'PDF',
-            description: '信号博弈笔记，整理 Moral Hazard/Mechanism 框架',
-            downloadUrl: 'https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Game%20theory/Signal%20Game.pdf',
-            downloadFilename: 'Signal Game.pdf',
+            description: 'Reed 与 maart1nham6ur9er 的博弈论课堂笔记整理',
+            downloadUrl: 'https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Game%20theory/GameTheoryBook.pdf',
+            downloadFilename: 'GameTheoryBook.pdf',
             mimeType: 'application/pdf',
           },
         ]
