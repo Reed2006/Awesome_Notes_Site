@@ -355,6 +355,32 @@ export const categories: Category[] = [
         ]
       },
     ]
+  },
+  {
+    id: 'workshop',
+    code: '04',
+    title: 'WORKSHOP',
+    courses: [
+      {
+        id: 'macrofinance-narrative',
+        code: 'WS-101',
+        title: 'Macrofinance, Asset Pricing & Narrative',
+        titleZh: '宏观金融、资产定价与叙事',
+        subtitle: 'Workshop papers, textbooks, and materials',
+        description: '宏观金融与叙事资产定价的workshop资料合集，包含论文、课本与相关参考资料，帮助快速上手该专题的研究脉络。',
+        resources: [
+          {
+            id: 'ws-1',
+            title: 'Macrofinance, Asset Pricing & Narrative Workshop Pack',
+            type: 'CODE',
+            description: 'Workshop 论文、课本与资料（ZIP）',
+            downloadUrl: 'https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Workshop/Macroeconomics,asset%20pricing%20and%20narrative%20workshop.zip',
+            downloadFilename: 'Macroeconomics,asset pricing and narrative workshop.zip',
+            mimeType: 'application/zip',
+          },
+        ]
+      },
+    ]
   }
 ];
 
