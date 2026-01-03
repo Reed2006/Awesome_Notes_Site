@@ -1,3 +1,4 @@
+import type { ComponentProps } from 'react';
 import { motion } from 'framer-motion';
 import { Download, FileText, Code, Video, Link as LinkIcon, ArrowRight } from 'lucide-react';
 import { Course, Resource, categories } from '@/lib/courseData';
@@ -13,11 +14,45 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
-import { Calendar } from '@/components/ui/calendar';
+import { Calendar, CalendarDayButton } from '@/components/ui/calendar';
 
 interface ContentAreaProps {
   course: Course | null;
   onSelectCourse: (courseId: string) => void;
+}
+
+const WORKSHOP_TIMELINE: Record<string, string> = {
+  '2026-01-09': 'Asset Pricing 第一次研读',
+  '2026-01-11': '集体汇报前两个章节 · 研读一篇论文',
+  '2026-01-13': '集体汇报后两个章节 · 分享论文',
+};
+
+const formatWorkshopDateKey = (date: Date) => date.toISOString().split('T')[0];
+
+function WorkshopDayButton(props: ComponentProps<typeof CalendarDayButton>) {
+  const event = WORKSHOP_TIMELINE[formatWorkshopDateKey(props.day.date)];
+
+  return (
+    <CalendarDayButton
+      {...props}
+      className={cn(
+        "items-start justify-start text-left gap-2 p-3 min-h-[140px] [&>span]:text-sm",
+        event && "bg-muted/30 hover:bg-muted/40",
+        props.className
+      )}
+    >
+      <div className="flex flex-col gap-2 w-full">
+        <span className="text-xl font-semibold">
+          {props.day.date.getDate().toString().padStart(2, '0')}
+        </span>
+        {event && (
+          <span className="text-xs leading-snug text-muted-foreground">
+            {event}
+          </span>
+        )}
+      </div>
+    </CalendarDayButton>
+  );
 }
 
 function ResourceTypeIcon({ type }: { type: Resource['type'] }) {
@@ -467,11 +502,13 @@ export function ContentArea({ course, onSelectCourse }: ContentAreaProps) {
           {showWorkshopCalendar ? (
             <div className="flex justify-center">
               <Calendar
+                className="w-full max-w-3xl [--cell-size:5.5rem]"
                 month={january2026}
                 defaultMonth={january2026}
                 fromDate={january2026}
                 toDate={new Date(2026, 0, 31)}
                 captionLayout="label"
+                components={{ DayButton: WorkshopDayButton }}
               />
             </div>
           ) : (
