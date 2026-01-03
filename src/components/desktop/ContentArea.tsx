@@ -500,8 +500,12 @@ export function ContentArea({ course, onSelectCourse }: ContentAreaProps) {
           transition={{ delay: 0.25 }}
           className="lg:col-span-9 px-8 lg:px-16 py-8"
         >
-          {showWorkshopCalendar ? (
-            <div className="flex justify-center">
+          <p className="font-serif text-lg leading-relaxed text-foreground/90 max-w-2xl mb-8">
+            {course.description}
+          </p>
+
+          {showWorkshopCalendar && (
+            <div className="flex justify-center pt-8 border-t border-border">
               <Calendar
                 className="w-full max-w-4xl [--cell-size:6rem]"
                 defaultMonth={january2026}
@@ -509,10 +513,6 @@ export function ContentArea({ course, onSelectCourse }: ContentAreaProps) {
                 components={{ DayButton: WorkshopDayButton }}
               />
             </div>
-          ) : (
-            <p className="font-serif text-lg leading-relaxed text-foreground/90 max-w-2xl">
-              {course.description}
-            </p>
           )}
         </motion.div>
       </div>
