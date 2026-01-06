@@ -27,6 +27,16 @@ const WORKSHOP_TIMELINE: Record<string, string> = {
   '2026-01-13': '1.13 ｜ 集体汇报后两个章节 · 分享论文',
 };
 
+const CONTRIBUTORS = [
+  {
+    name: 'Reed2006',
+    role: 'Host · Reed',
+    email: '24300680058@m.fudan.edu.cn',
+    github: 'https://github.com/Reed2006',
+    avatar: 'https://github.com/Reed2006.png',
+  },
+];
+
 const formatWorkshopDateKey = (date: Date) => {
   const year = date.getFullYear();
   const month = (date.getMonth() + 1).toString().padStart(2, '0');
@@ -437,6 +447,65 @@ function WelcomeContent({ onSelectCourse }: { onSelectCourse: (courseId: string)
             >
               <MusicPlayer track={featuredTrack} />
             </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Contributor Thanks */}
+      <div className="border-t border-border bg-background">
+        <div className="px-8 lg:px-16 py-12 space-y-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15 }}
+            className="space-y-2"
+          >
+            <p className="font-mono text-xs tracking-[0.3em] text-muted-foreground uppercase">
+              Contributor Thanks
+            </p>
+            <h3 className="font-serif text-2xl">Host Reed</h3>
+            <p className="text-sm text-muted-foreground max-w-2xl">
+              感谢维护者对知识档案的持续投入；下方致谢会展示托管者的 GitHub 头像与联络方式。
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {CONTRIBUTORS.map((contributor, index) => (
+              <motion.div
+                key={contributor.github}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 + index * 0.05 }}
+                className="border border-border rounded-3xl p-6 flex gap-4 items-center bg-muted/10"
+              >
+                <div className="w-16 h-16 rounded-full overflow-hidden border border-border flex-shrink-0">
+                  <img
+                    src={contributor.avatar}
+                    alt={`${contributor.name} avatar`}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="space-y-1">
+                  <p className="font-serif text-lg">{contributor.name}</p>
+                  <p className="text-xs font-mono text-muted-foreground">{contributor.role}</p>
+                  <a
+                    href={`mailto:${contributor.email}`}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors block"
+                  >
+                    {contributor.email}
+                  </a>
+                  <a
+                    href={contributor.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center text-xs font-mono text-primary hover:underline"
+                  >
+                    GitHub · {contributor.name}
+                  </a>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
