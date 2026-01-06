@@ -21,19 +21,34 @@ interface ContentAreaProps {
   onSelectCourse: (courseId: string) => void;
 }
 
+interface Contributor {
+  name: string;
+  role: string;
+  avatar: string;
+  email?: string;
+  github?: string;
+  note?: string;
+}
+
 const WORKSHOP_TIMELINE: Record<string, string> = {
   '2026-01-09': '1.9 ｜ Asset Pricing 第一次研读',
   '2026-01-11': '1.11 ｜ 集体汇报前两个章节 · 研读一篇论文',
   '2026-01-13': '1.13 ｜ 集体汇报后两个章节 · 分享论文',
 };
 
-const CONTRIBUTORS = [
+const CONTRIBUTORS: Contributor[] = [
   {
     name: 'Reed2006',
     role: 'Host · Reed',
-    email: '24300680058@m.fudan.edu.cn',
+    email: 'yche24@m.fudan.edu.cn',
     github: 'https://github.com/Reed2006',
     avatar: 'https://github.com/Reed2006.png',
+  },
+  {
+    name: 'maart1nham6ur9er',
+    role: 'Contributor',
+    avatar: '/contributors/maart1nham6ur9er.jpg',
+    note: 'Wechat Account maart1nham6ur9er',
   },
 ];
 
@@ -489,20 +504,27 @@ function WelcomeContent({ onSelectCourse }: { onSelectCourse: (courseId: string)
                 <div className="space-y-1">
                   <p className="font-serif text-lg">{contributor.name}</p>
                   <p className="text-xs font-mono text-muted-foreground">{contributor.role}</p>
-                  <a
-                    href={`mailto:${contributor.email}`}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors block"
-                  >
-                    {contributor.email}
-                  </a>
-                  <a
-                    href={contributor.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center text-xs font-mono text-primary hover:underline"
-                  >
-                    GitHub · {contributor.name}
-                  </a>
+                  {contributor.email && (
+                    <a
+                      href={`mailto:${contributor.email}`}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors block"
+                    >
+                      {contributor.email}
+                    </a>
+                  )}
+                  {contributor.github && (
+                    <a
+                      href={contributor.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center text-xs font-mono text-primary hover:underline"
+                    >
+                      GitHub · {contributor.name}
+                    </a>
+                  )}
+                  {contributor.note && (
+                    <p className="text-xs font-mono text-muted-foreground">{contributor.note}</p>
+                  )}
                 </div>
               </motion.div>
             ))}
