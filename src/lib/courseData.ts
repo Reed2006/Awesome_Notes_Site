@@ -233,6 +233,34 @@ export const categories: Category[] = [
           { id: 'ac-3', title: '会计学期末复习资料', type: 'PDF', description: '知识点与真题' },
         ]
       },
+      {
+        id: 'economic-history',
+        code: 'ECO-107',
+        title: 'Economic History',
+        titleZh: '经济史',
+        subtitle: 'Quantitative mechanisms behind historical narratives',
+        description: '经济史、或者说量化经济史，强调用严谨的计量识别去检验历史叙事（对历史学家口中的“理固宜然”做实证查核），也强调把经济学中的因果识别视角嫁接到具体的历史场域。因此，本课需要跳出高中“纯粹史实”的背诵路径，转而从机制角度去厘清 A→B 的经济学逻辑。例如在 Acemoglu 的殖民地系列文章中，经济史学家的任务就是把被殖民地的制度偏好、制度延续与今日影响分维度做计量检验。除 PPT 之外，授课老师补充的论文材料都已整理为 set，并附有一个摘要性的综述文件供速览；同时也整理了往年真题，方便在“考试 ≠ 经济史”之间自由取舍。',
+        resources: [
+          {
+            id: 'eh-1',
+            title: 'Economic History Essay Sets',
+            type: 'CODE',
+            description: '课堂论文集 + 老师补充阅读（含摘要综述），ZIP',
+            downloadUrl: 'https://raw.githubusercontent.com/Reed2006/Awesome_Notes_Site/main/big-files/economic-history-essay-sets.zip',
+            downloadFilename: 'economic-history-essay-sets.zip',
+            mimeType: 'application/zip',
+          },
+          {
+            id: 'eh-2',
+            title: 'Economic History Past Papers',
+            type: 'CODE',
+            description: '历年真题与考试参考（ZIP）',
+            downloadUrl: 'https://raw.githubusercontent.com/Reed2006/Awesome_Notes_Site/main/big-files/economic-history-past-papers.zip',
+            downloadFilename: 'economic-history-past-papers.zip',
+            mimeType: 'application/zip',
+          },
+        ]
+      },
     ]
   },
   {
