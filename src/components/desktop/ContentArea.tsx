@@ -47,7 +47,7 @@ const CONTRIBUTORS: Contributor[] = [
   {
     name: 'maart1nham6ur9er',
     role: 'Contributor',
-    avatar: '/contributors/maart1nham6ur9er.jpg',
+    avatar: 'https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Contributor/maart1nham6ur9er.jpg',
     note: 'Wechat Account maart1nham6ur9er',
   },
 ];
