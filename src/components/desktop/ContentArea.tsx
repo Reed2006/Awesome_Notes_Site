@@ -1,6 +1,6 @@
 import type { ComponentProps } from 'react';
 import { motion } from 'framer-motion';
-import { Download, FileText, Code, Video, Link as LinkIcon, ArrowRight } from 'lucide-react';
+import { Download, FileText, Code, Video, Link as LinkIcon, ArrowRight, ExternalLink } from 'lucide-react';
 import { Course, Resource, categories } from '@/lib/courseData';
 import { getExtensionFromMimeType, getExtensionFromFilename } from '@/lib/file-utils';
 import { cn } from '@/lib/utils';
@@ -596,9 +596,40 @@ export function ContentArea({ course, onSelectCourse }: ContentAreaProps) {
           transition={{ delay: 0.25 }}
           className="lg:col-span-9 px-8 lg:px-16 py-8"
         >
-          <p className="font-serif text-lg leading-relaxed text-foreground/90 max-w-2xl mb-8">
+          <p className="font-serif text-lg leading-relaxed text-foreground/90 max-w-2xl mb-6">
             {course.description}
           </p>
+
+          {course.featuredMedia?.type === 'image' && (
+            <motion.a
+              href={course.featuredMedia.href ?? course.featuredMedia.src}
+              target="_blank"
+              rel="noreferrer"
+              className="block group mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35 }}
+            >
+              <div className="relative overflow-hidden rounded-3xl border border-border shadow-lg">
+                <img
+                  src={course.featuredMedia.src}
+                  alt={course.featuredMedia.alt ?? `${course.title} preview`}
+                  className="w-full object-cover aspect-video transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-background/70 via-transparent to-accent/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-4 right-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur text-sm font-mono">
+                  <span>访问项目</span>
+                  <ExternalLink className="w-4 h-4" />
+                </div>
+              </div>
+              {course.featuredMedia.caption && (
+                <p className="text-sm text-muted-foreground mt-3 text-center">
+                  {course.featuredMedia.caption}
+                </p>
+              )}
+            </motion.a>
+          )}
 
           {showWorkshopCalendar && (
             <div className="flex justify-center pt-8 border-t border-border">

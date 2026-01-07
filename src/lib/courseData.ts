@@ -15,6 +15,14 @@ export interface Resource {
   storagePath?: string;      // Supabase 存储路径（用于删除/更新）
 }
 
+export interface FeaturedMedia {
+  type: 'image';
+  src: string;
+  href?: string;
+  alt?: string;
+  caption?: string;
+}
+
 export interface Course {
   id: string;
   code: string;
@@ -24,6 +32,7 @@ export interface Course {
   description: string;
   resources: Resource[];
   contentMarkdown?: string;
+  featuredMedia?: FeaturedMedia;
 }
 
 export interface Category {
@@ -423,7 +432,14 @@ export const categories: Category[] = [
         title: 'Y86-64 CPU',
         titleZh: 'Y86-64 CPU',
         subtitle: 'Building a simple processor from scratch',
-        description: 'Y86-64 CPU项目是计算机系统课程的核心实践，从零开始设计和实现一个简化的64位处理器。项目涵盖指令集架构设计、流水线实现、控制逻辑、以及使用HDL进行硬件描述。',
+        description: '本项目立足CSAPP的CPU开发逻辑，实现一个Sequence五过程CPU，并进行可视化。可视化时参考赛博朋克风格，并配备了AI助手，IDE风格。',
+        featuredMedia: {
+          type: 'image',
+          src: 'https://image.thum.io/get/width/1600/https://reed2006.github.io/PJ-Y86-64-Simulator/',
+          href: 'https://reed2006.github.io/PJ-Y86-64-Simulator/',
+          alt: 'PJ103 · Sequence 五过程 CPU 可视化模拟器截图',
+          caption: '点击体验 PJ103：Y86-64 Sequence CPU 可视化 IDE',
+        },
         resources: [
           { id: 'y86-1', title: 'Y86-64 指令集参考', type: 'PDF', description: '完整指令编码与语义' },
           { id: 'y86-2', title: '流水线CPU设计文档', type: 'PDF', description: '五级流水线架构详解' },
