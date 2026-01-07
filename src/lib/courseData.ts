@@ -23,6 +23,12 @@ export interface FeaturedMedia {
   caption?: string;
 }
 
+export interface CourseLink {
+  label: string;
+  href: string;
+  description?: string;
+}
+
 export interface Course {
   id: string;
   code: string;
@@ -33,6 +39,7 @@ export interface Course {
   resources: Resource[];
   contentMarkdown?: string;
   featuredMedia?: FeaturedMedia;
+  primaryLink?: CourseLink;
 }
 
 export interface Category {
@@ -440,11 +447,12 @@ export const categories: Category[] = [
           alt: 'PJ103 · Sequence 五过程 CPU 可视化模拟器截图',
           caption: '点击体验 PJ103：Y86-64 Sequence CPU 可视化 IDE',
         },
-        resources: [
-          { id: 'y86-1', title: 'Y86-64 指令集参考', type: 'PDF', description: '完整指令编码与语义' },
-          { id: 'y86-2', title: '流水线CPU设计文档', type: 'PDF', description: '五级流水线架构详解' },
-          { id: 'y86-3', title: 'HCL 实现代码', type: 'CODE', description: 'SEQ/PIPE 处理器实现' },
-        ]
+        primaryLink: {
+          label: 'GitHub · PJ-Y86-64-Simulator',
+          href: 'https://github.com/Reed2006/PJ-Y86-64-Simulator',
+          description: '查看全部源代码、说明与 IDE 视觉稿',
+        },
+        resources: []
       },
     ]
   },

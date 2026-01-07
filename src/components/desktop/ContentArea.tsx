@@ -1,6 +1,6 @@
 import type { ComponentProps } from 'react';
 import { motion } from 'framer-motion';
-import { Download, FileText, Code, Video, Link as LinkIcon, ArrowRight, ExternalLink } from 'lucide-react';
+import { Download, FileText, Code, Video, Link as LinkIcon, ArrowRight, ExternalLink, Github } from 'lucide-react';
 import { Course, Resource, categories } from '@/lib/courseData';
 import { getExtensionFromMimeType, getExtensionFromFilename } from '@/lib/file-utils';
 import { cn } from '@/lib/utils';
@@ -629,6 +629,26 @@ export function ContentArea({ course, onSelectCourse }: ContentAreaProps) {
                 </p>
               )}
             </motion.a>
+          )}
+
+          {course.primaryLink && (
+            <div className="mb-8 space-y-2">
+              <a
+                href={course.primaryLink.href}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border font-mono text-sm hover:bg-secondary/40 transition-colors"
+              >
+                <Github className="w-4 h-4" />
+                <span>{course.primaryLink.label}</span>
+                <ExternalLink className="w-4 h-4 opacity-70" />
+              </a>
+              {course.primaryLink.description && (
+                <p className="text-sm text-muted-foreground">
+                  {course.primaryLink.description}
+                </p>
+              )}
+            </div>
           )}
 
           {showWorkshopCalendar && (
