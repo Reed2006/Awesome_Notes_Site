@@ -346,11 +346,26 @@ export const categories: Category[] = [
         title: 'Computer Systems',
         titleZh: '计算机系统基础',
         subtitle: 'Understanding how computers work from the ground up',
-        description: '计算机系统基础课程从底层视角理解计算机的工作原理，包括数据表示、汇编语言、处理器架构、内存层次、链接与加载、异常控制流等内容。基于CSAPP教材深入理解系统级编程。',
+        description: '计算机系统基础，笔者本科阶段上过的为数不多的好课之一。授课老师深入浅出，lab又难又多，最后搓一个CPU成为笔者永生难忘的回忆。于是CPU的可视化改进版笔者放在PJ103，所有lab以及笔记在下面。无须多言，计算机的暴力就是这样，干就完了。',
         resources: [
-          { id: 'cs-1', title: 'CSAPP 读书笔记', type: 'PDF', description: '深入理解计算机系统精读' },
-          { id: 'cs-2', title: 'Lab 实验报告合集', type: 'PDF', description: 'Data/Bomb/Attack Lab' },
-          { id: 'cs-3', title: 'x86-64 汇编速查', type: 'PDF', description: '常用指令与寄存器' },
+          {
+            id: 'cs-labs',
+            title: 'CSAPP Labs & Reports',
+            type: 'CODE',
+            description: '所有lab代码与实验报告（ZIP）',
+            downloadUrl: 'https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/CSAPP/Labs.zip',
+            downloadFilename: 'Labs.zip',
+            mimeType: 'application/zip',
+          },
+          {
+            id: 'cs-notes',
+            title: 'CSAPP 笔记',
+            type: 'PDF',
+            description: '课程精读笔记（PDF）',
+            downloadUrl: 'https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/CSAPP/csapp_book.pdf',
+            downloadFilename: 'csapp_book.pdf',
+            mimeType: 'application/pdf',
+          },
         ]
       },
       {
