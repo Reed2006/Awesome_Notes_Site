@@ -40,6 +40,8 @@ export interface Course {
   contentMarkdown?: string;
   featuredMedia?: FeaturedMedia;
   primaryLink?: CourseLink;
+  pdfViewerUrl?: string;
+  pdfViewerTitle?: string;
 }
 
 export interface Category {
@@ -479,6 +481,24 @@ export const categories: Category[] = [
             mimeType: 'application/zip',
           },
         ]
+      },
+    ]
+  },
+  {
+    id: 'working-proposals',
+    code: '05',
+    title: 'WORKING PROPOSALS',
+    courses: [
+      {
+        id: 'algorithmic-tacitus-trap',
+        code: 'WP-101',
+        title: 'Tacitus Trap in Algorithmic Finance Simulation',
+        titleZh: 'Tacitus Trap 算法金融仿真',
+        subtitle: 'Proposal for adversarial risk in automated markets',
+        description: '在工作中提出的 Tacitus Trap 项目关注算法化金融系统在极端负反馈下的风险演化路径。下方提供在线阅读的 proposal，涵盖模型假设、仿真框架与验证思路，便于直接在站内预览研究进展。',
+        pdfViewerUrl: 'https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Proposals/Algorithmic_Tacitus_Trap_Proposal.pdf',
+        pdfViewerTitle: 'Algorithmic Tacitus Trap Proposal · PDF',
+        resources: []
       },
     ]
   }

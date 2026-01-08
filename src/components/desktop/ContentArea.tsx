@@ -651,6 +651,41 @@ export function ContentArea({ course, onSelectCourse }: ContentAreaProps) {
             </div>
           )}
 
+          {course.pdfViewerUrl && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="mb-10"
+            >
+              <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-1">
+                    PROPOSAL · PDF
+                  </p>
+                  <h3 className="font-serif text-xl">{course.pdfViewerTitle ?? course.title}</h3>
+                </div>
+                <a
+                  href={course.pdfViewerUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border text-sm font-mono hover:bg-secondary/40 transition-colors"
+                >
+                  <span>在新标签中打开</span>
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+              <div className="w-full aspect-[3/4] rounded-3xl border border-border overflow-hidden shadow-inner bg-muted">
+                <iframe
+                  src={`${course.pdfViewerUrl}#toolbar=0`}
+                  title={course.pdfViewerTitle ?? `${course.title} proposal`}
+                  className="w-full h-full"
+                  loading="lazy"
+                />
+              </div>
+            </motion.div>
+          )}
+
           {showWorkshopCalendar && (
             <div className="flex justify-center pt-8 border-t border-border">
               <Calendar
