@@ -27,3 +27,6 @@ dist-ssr
 .env
 .env.local
 .env.*.local
+
+# Original Supabase export; extracted resources are tracked in public/resources
+/afyuxngkeyapjrncfxsz.storage.zip

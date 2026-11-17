@@ -1,0 +1,420 @@
+{
+  "checked_on": "2026-11-16",
+  "timezone": "America/Los_Angeles",
+  "repository": "https://github.com/Reed2006/Awesome_Notes_Site",
+  "commit": "302b7198b7916858710aba4c4b0463fed4bab2f9",
+  "scope": "Supabase public object URLs referenced by source code; not a complete bucket listing",
+  "project_host": "afyuxngkeyapjrncfxsz.supabase.co",
+  "dns_checks": {
+    "google_public_dns": "NXDOMAIN",
+    "cloudflare_dns": "NXDOMAIN"
+  },
+  "files": [
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/P.E/Core_concepts_for_exam.zip",
+      "bucket": "P.E",
+      "object_path": "Core_concepts_for_exam.zip",
+      "references": [
+        "src/lib/courseData.ts:73"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 32102,
+      "sha256": "216b3aec3505a617525883d73ecc221f6da446b44a261c253a2bdeb87eccdd5b",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/P.E/Core_concepts_for_exam.zip",
+      "target_url_path": "/Awesome_Notes_Site/resources/P.E/Core_concepts_for_exam.zip"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/P.E/Sample_exam.zip",
+      "bucket": "P.E",
+      "object_path": "Sample_exam.zip",
+      "references": [
+        "src/lib/courseData.ts:82"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 30490,
+      "sha256": "0251d298a1c4f0de735e7647e714c9985b045e046ea32f50a9d1171b443baeec",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/P.E/Sample_exam.zip",
+      "target_url_path": "/Awesome_Notes_Site/resources/P.E/Sample_exam.zip"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/P.E/Sample_paper.pdf",
+      "bucket": "P.E",
+      "object_path": "Sample_paper.pdf",
+      "references": [
+        "src/lib/courseData.ts:91"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 1265787,
+      "sha256": "4d0f29d30fa6aba1450506d5a2cd8f26b277167fa2cf864abce75b36f1a85069",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/P.E/Sample_paper.pdf",
+      "target_url_path": "/Awesome_Notes_Site/resources/P.E/Sample_paper.pdf"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/P.E/policy_centralization_0831.pdf",
+      "bucket": "P.E",
+      "object_path": "policy_centralization_0831.pdf",
+      "references": [
+        "src/lib/courseData.ts:100"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 6492509,
+      "sha256": "462df7f2efbbe4f0bc91371042fe143b81570d29c9de609c83dc44091e392053",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/P.E/policy_centralization_0831.pdf",
+      "target_url_path": "/Awesome_Notes_Site/resources/P.E/policy_centralization_0831.pdf"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/microeconomics/2022_final_term_exam.docx",
+      "bucket": "microeconomics",
+      "object_path": "2022_final_term_exam.docx",
+      "references": [
+        "src/lib/courseData.ts:119"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 936413,
+      "sha256": "61211e8e6f3b7690e2a94f46cf99bcdb0af467446b86c91f3c412986e98416ba",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/microeconomics/2022_final_term_exam.docx",
+      "target_url_path": "/Awesome_Notes_Site/resources/microeconomics/2022_final_term_exam.docx"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/microeconomics/Homework%20set.zip",
+      "bucket": "microeconomics",
+      "object_path": "Homework set.zip",
+      "references": [
+        "src/lib/courseData.ts:128"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 442058,
+      "sha256": "be2ba482ab2a88f3ebf610ef6bf4e5da06fbb95e793bde7fed24b4d1a07d1023",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/microeconomics/Homework set.zip",
+      "target_url_path": "/Awesome_Notes_Site/resources/microeconomics/Homework%20set.zip"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/microeconomics/Microeconomics%20Midterm%20Exam%202022.pdf",
+      "bucket": "microeconomics",
+      "object_path": "Microeconomics Midterm Exam 2022.pdf",
+      "references": [
+        "src/lib/courseData.ts:137"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 248302,
+      "sha256": "2c2962fc5f212d730f2f211979fe557e4e6db331c760f755e2600074a2445a71",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/microeconomics/Microeconomics Midterm Exam 2022.pdf",
+      "target_url_path": "/Awesome_Notes_Site/resources/microeconomics/Microeconomics%20Midterm%20Exam%202022.pdf"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/microeconomics/Microeconomics-Fudan-Cheng-Wang-2025.pdf",
+      "bucket": "microeconomics",
+      "object_path": "Microeconomics-Fudan-Cheng-Wang-2025.pdf",
+      "references": [
+        "src/lib/courseData.ts:146"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 481170,
+      "sha256": "60da3b2fa811ea922f3c1a6bad07f283b7a2336ac9f1dd129b73479fd4028df0",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/microeconomics/Microeconomics-Fudan-Cheng-Wang-2025.pdf",
+      "target_url_path": "/Awesome_Notes_Site/resources/microeconomics/Microeconomics-Fudan-Cheng-Wang-2025.pdf"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/microeconomics/Reed's%20notes.pdf",
+      "bucket": "microeconomics",
+      "object_path": "Reed's notes.pdf",
+      "references": [
+        "src/lib/courseData.ts:155"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 421521,
+      "sha256": "4423bd643be8efd9a0f3c6772e9aea78b9f89e2324a22d1914acad5c35b5e719",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/microeconomics/Reed's notes.pdf",
+      "target_url_path": "/Awesome_Notes_Site/resources/microeconomics/Reed's%20notes.pdf"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Macroeconomics/Macroeconomics_book.pdf",
+      "bucket": "Macroeconomics",
+      "object_path": "Macroeconomics_book.pdf",
+      "references": [
+        "src/lib/courseData.ts:174"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 1134576,
+      "sha256": "6c0b73ad2c703a0ec91f58758b96cf84618f28a9450aa097501da5a0d1040716",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/Macroeconomics/Macroeconomics_book.pdf",
+      "target_url_path": "/Awesome_Notes_Site/resources/Macroeconomics/Macroeconomics_book.pdf"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Macroeconomics/2019_fudan.pdf",
+      "bucket": "Macroeconomics",
+      "object_path": "2019_fudan.pdf",
+      "references": [
+        "src/lib/courseData.ts:183"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 498701,
+      "sha256": "0bfdc39e4e309678d796791d2c0fb31076d8cedc4471894ab0f8b82a7a1386c4",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/Macroeconomics/2019_fudan.pdf",
+      "target_url_path": "/Awesome_Notes_Site/resources/Macroeconomics/2019_fudan.pdf"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Macroeconomics/2019_fudan_econ.pdf",
+      "bucket": "Macroeconomics",
+      "object_path": "2019_fudan_econ.pdf",
+      "references": [
+        "src/lib/courseData.ts:192"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 547005,
+      "sha256": "7afddd238564ad5528b8e1ba814d9e53cda7c9630ae8c1da49f660d55ed129f0",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/Macroeconomics/2019_fudan_econ.pdf",
+      "target_url_path": "/Awesome_Notes_Site/resources/Macroeconomics/2019_fudan_econ.pdf"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Macroeconomics/Some_exercise.pdf",
+      "bucket": "Macroeconomics",
+      "object_path": "Some_exercise.pdf",
+      "references": [
+        "src/lib/courseData.ts:201"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 686452,
+      "sha256": "7a476623bccc13ef332afa6c28863e8eb1abedaa7673cc8d03b094a18ad38aee",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/Macroeconomics/Some_exercise.pdf",
+      "target_url_path": "/Awesome_Notes_Site/resources/Macroeconomics/Some_exercise.pdf"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Corporate%20Finance/What%20you%20should%20know%20in%20Corporate%20Finance.pdf",
+      "bucket": "Corporate Finance",
+      "object_path": "What you should know in Corporate Finance.pdf",
+      "references": [
+        "src/lib/courseData.ts:222",
+        "src/lib/courseData.ts:231"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 787257,
+      "sha256": "12643278b52727101bf7a477cf92630669277a2088428592959e369e0f37a3a5",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/Corporate Finance/What you should know in Corporate Finance.pdf",
+      "target_url_path": "/Awesome_Notes_Site/resources/Corporate%20Finance/What%20you%20should%20know%20in%20Corporate%20Finance.pdf"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Game%20theory/Should%20platforms%20be%20allowed%20to%20sell%20on%20their%20own%20marketplaces.pdf",
+      "bucket": "Game theory",
+      "object_path": "Should platforms be allowed to sell on their own marketplaces.pdf",
+      "references": [
+        "src/lib/courseData.ts:250"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 5536598,
+      "sha256": "fea0dc28377506291fddb4beb7608b51705145c6af502eedc0b8b7626e57ac83",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/Game theory/Should platforms be allowed to sell on their own marketplaces.pdf",
+      "target_url_path": "/Awesome_Notes_Site/resources/Game%20theory/Should%20platforms%20be%20allowed%20to%20sell%20on%20their%20own%20marketplaces.pdf"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Game%20theory/Should%20platforms%20be%20allowed%20to%20use%20algorithm.pdf",
+      "bucket": "Game theory",
+      "object_path": "Should platforms be allowed to use algorithm.pdf",
+      "references": [
+        "src/lib/courseData.ts:259"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 178395,
+      "sha256": "ad25291d567da597156c671debaabf33b2f49d8c4a7fc3739ca17b3644817aff",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/Game theory/Should platforms be allowed to use algorithm.pdf",
+      "target_url_path": "/Awesome_Notes_Site/resources/Game%20theory/Should%20platforms%20be%20allowed%20to%20use%20algorithm.pdf"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Game%20theory/GameTheoryBook.pdf",
+      "bucket": "Game theory",
+      "object_path": "GameTheoryBook.pdf",
+      "references": [
+        "src/lib/courseData.ts:268"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 640581,
+      "sha256": "ae685cfe4232e26bcfd75513aabf2044aa3af2dc56153edfaf7ca3b6cc592f91",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/Game theory/GameTheoryBook.pdf",
+      "target_url_path": "/Awesome_Notes_Site/resources/Game%20theory/GameTheoryBook.pdf"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/CSAPP/Labs.zip",
+      "bucket": "CSAPP",
+      "object_path": "Labs.zip",
+      "references": [
+        "src/lib/courseData.ts:374"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 7962633,
+      "sha256": "e80a325d4be232422b4551010c32a3823d30b876a77a2b4fc2d0736264b21488",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/CSAPP/Labs.zip",
+      "target_url_path": "/Awesome_Notes_Site/resources/CSAPP/Labs.zip"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/CSAPP/csapp_book.pdf",
+      "bucket": "CSAPP",
+      "object_path": "csapp_book.pdf",
+      "references": [
+        "src/lib/courseData.ts:383"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 691942,
+      "sha256": "914d40d4f1eb0eaa31dd84ccf3f854c69232121e71e7039a2036689fc852be61",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/CSAPP/csapp_book.pdf",
+      "target_url_path": "/Awesome_Notes_Site/resources/CSAPP/csapp_book.pdf"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Convex%20Optimization/Convex%20Optimization%20Ryan.zip",
+      "bucket": "Convex Optimization",
+      "object_path": "Convex Optimization Ryan.zip",
+      "references": [
+        "src/lib/courseData.ts:402"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 8646240,
+      "sha256": "b77a06a4eed5b69e6cfaadee54188e20411caaf758eaf11ad641dfdbc858ceb9",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/Convex Optimization/Convex Optimization Ryan.zip",
+      "target_url_path": "/Awesome_Notes_Site/resources/Convex%20Optimization/Convex%20Optimization%20Ryan.zip"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Workshop/Macroeconomics,asset%20pricing%20and%20narrative%20workshop.zip",
+      "bucket": "Workshop",
+      "object_path": "Macroeconomics,asset pricing and narrative workshop.zip",
+      "references": [
+        "src/lib/courseData.ts:479"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 9874062,
+      "sha256": "221b6a1de010742839bc00ce339efd728b7ba19c8ac66da360d8230d2f1df4f9",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/Workshop/Macroeconomics,asset pricing and narrative workshop.zip",
+      "target_url_path": "/Awesome_Notes_Site/resources/Workshop/Macroeconomics,asset%20pricing%20and%20narrative%20workshop.zip"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Proposals/Algorithmic_Tacitus_Trap_Proposal.pdf",
+      "bucket": "Proposals",
+      "object_path": "Algorithmic_Tacitus_Trap_Proposal.pdf",
+      "references": [
+        "src/lib/courseData.ts:499"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 53896,
+      "sha256": "fea564d59ae6856effd8b287be416c876b5b10b77dbdf1b62aaa9e8b19a1e91f",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/Proposals/Algorithmic_Tacitus_Trap_Proposal.pdf",
+      "target_url_path": "/Awesome_Notes_Site/resources/Proposals/Algorithmic_Tacitus_Trap_Proposal.pdf"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Contributor/maart1nham6ur9er.jpg",
+      "bucket": "Contributor",
+      "object_path": "maart1nham6ur9er.jpg",
+      "references": [
+        "src/components/desktop/ContentArea.tsx:50"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 80364,
+      "sha256": "8dddbb3f443f027bf7a9c56aafa964a73c9ceef6c92e6057091821f203fe4b56",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/Contributor/maart1nham6ur9er.jpg",
+      "target_url_path": "/Awesome_Notes_Site/resources/Contributor/maart1nham6ur9er.jpg"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/music/M500000Sehxx0DRoQl.mp3",
+      "bucket": "music",
+      "object_path": "M500000Sehxx0DRoQl.mp3",
+      "references": [
+        "src/components/desktop/ContentArea.tsx:353"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 4494547,
+      "sha256": "67d1ea9fd26c34105c84165facbf5de81203c17099009240194bc4df02ed5f30",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/music/M500000Sehxx0DRoQl.mp3",
+      "target_url_path": "/Awesome_Notes_Site/resources/music/M500000Sehxx0DRoQl.mp3"
+    },
+    {
+      "source_url": "https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/music/photo.jpeg",
+      "bucket": "music",
+      "object_path": "photo.jpeg",
+      "references": [
+        "src/components/desktop/ContentArea.tsx:354"
+      ],
+      "downloaded": true,
+      "check_result": "dns_resolution_failed",
+      "size_bytes": 6034,
+      "sha256": "2643e60ad494c890ceb21699d2dca4b169ff16d16d61199869d8735da9a0da57",
+      "recovered_from": "user_provided_archive",
+      "local_path": "public/resources/music/photo.jpeg",
+      "target_url_path": "/Awesome_Notes_Site/resources/music/photo.jpeg"
+    }
+  ],
+  "downloaded_repository_files": [
+    {
+      "path": "big-files/economic-history-essay-sets.zip",
+      "size_bytes": 69621364
+    },
+    {
+      "path": "big-files/economic-history-past-papers.zip",
+      "size_bytes": 79525266
+    }
+  ],
+  "recovery": {
+    "archive": "afyuxngkeyapjrncfxsz.storage.zip",
+    "sha256": "fd12222e299a6dfd3d4a8f2852e0777c4875e79d07bc44aa9e3b3d62bc107ec1",
+    "status": "verified_local_copy",
+    "deployment_workflow": "https://github.com/Reed2006/Awesome_Notes_Site/actions/workflows/gh-pages.yml",
+    "target_host": "GitHub Pages (same origin as website)",
+    "public_directory": "public/resources",
+    "archive_file_count": 26,
+    "archive_uncompressed_bytes": 52359054
+  },
+  "recovered_extra_files": [
+    {
+      "local_path": "public/resources/Corporate Finance/financial market.pdf",
+      "size_bytes": 189419,
+      "sha256": "e900ad211b0541414142d453e996a3dd6c7b208f596deaa7490b563ac4a749bb",
+      "target_url_path": "/Awesome_Notes_Site/resources/Corporate%20Finance/financial%20market.pdf",
+      "linked_resource_id": "cf-2",
+      "verified_content": "Financial Markets – Yale University Course Notes (PDF first page)"
+    }
+  ]
+}

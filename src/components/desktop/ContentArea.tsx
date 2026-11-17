@@ -1,3 +1,4 @@
+import { getResourceUrl } from '@/lib/resource-url';
 import type { ComponentProps } from 'react';
 import { motion } from 'framer-motion';
 import { Download, FileText, Code, Video, Link as LinkIcon, ArrowRight, ExternalLink, Github } from 'lucide-react';
@@ -47,7 +48,7 @@ const CONTRIBUTORS: Contributor[] = [
   {
     name: 'maart1nham6ur9er',
     role: 'Contributor',
-    avatar: 'https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/Contributor/maart1nham6ur9er.jpg',
+    avatar: getResourceUrl('Contributor/maart1nham6ur9er.jpg'),
     note: 'Wechat Account maart1nham6ur9er',
   },
 ];
@@ -350,8 +351,8 @@ function WelcomeContent({ onSelectCourse }: { onSelectCourse: (courseId: string)
   const featuredTrack = {
     title: '俏郎君',
     artist: '张敬轩',
-    src: 'https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/music/M500000Sehxx0DRoQl.mp3',
-    cover: 'https://afyuxngkeyapjrncfxsz.supabase.co/storage/v1/object/public/music/photo.jpeg',
+    src: getResourceUrl('music/M500000Sehxx0DRoQl.mp3'),
+    cover: getResourceUrl('music/photo.jpeg'),
     description:
       '这是本人最喜欢的歌词，俏郎君是电影“往日情怀”的翻译，讲述的是一对情侣因为政治意见不合、家庭境况不合被迫分开。'
   };

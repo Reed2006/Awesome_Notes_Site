@@ -1,5 +1,7 @@
 # EconAI 文件下载功能配置指南
 
+> 当前公开资料已迁移到 `public/resources/`，随 GitHub Pages 部署，浏览和下载不再需要 Supabase。迁移记录见 [migration/storage-audit.md](migration/storage-audit.md)。新增文件时，将文件放入对应分类目录，并在 `src/lib/courseData.ts` 中使用 `getResourceUrl('分类/文件名')` 引用。以下 Supabase 配置仅适用于保留的旧上传管理页；从该页上传不会自动更新静态资源清单。
+
 ## 第一步：配置 Supabase
 
 ### 1.1 创建 Supabase 账号和项目

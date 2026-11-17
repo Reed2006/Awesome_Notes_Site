@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "verify:resources": "node migration/verify-resources.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
